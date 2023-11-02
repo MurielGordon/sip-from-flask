@@ -6,6 +6,12 @@ import urllib.request
 from flask import Flask, flash, request, redirect, url_for, render_template
 from werkzeug.utils import secure_filename
 
+app = Flask(__name__)
+# the above solved the inescapable 'No file type' error. Error appeared whether or not the correct file type was submitted.
+# new error message is:
+# "RuntimeError: This session is unavailable because no secret key was set. Set the secret_key on the...
+# ...application to something unique and secret."
+
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 def allowed_file(filename):
