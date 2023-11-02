@@ -6,5 +6,9 @@ UPLOAD_FOLDER = 'static/uploads'
 
 app = Flask(__name__)
 app.secret_key = 'secret key'
+# recommended method for secret key generation:
+# >>>python3
+# >>> import os
+# >>> os.urandom(12)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1280 * 1280
