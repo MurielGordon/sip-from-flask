@@ -1,0 +1,4 @@
+1. Secret key generation: https://tinyurl.com/4ysuy5dk
+2. app.secret_key variable must be set in app_file_upload.py script AND in the if __name__ == "__main__": condition in main.py
+3. app.config['SESSION_TYPE'] = 'filesystem' added to if __name__ == "__main__": condition seems to do [something with where variables are stored in flask sessions.](https://tinyurl.com/2p9awsuv) Found it in an example of ways to spice up the name/main condition. Doesn't seem to be hurting anything ¯\_(ツ)_/¯
+4. Adding app.debug = True to the name/main condition in main.py also seems like good practice but can also be removed without hurting the fuctioning of the program.
