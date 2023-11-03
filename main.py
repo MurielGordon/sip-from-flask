@@ -11,8 +11,10 @@ app = Flask(__name__)
 # new error message is:
 # "RuntimeError: This session is unavailable because no secret key was set. Set the secret_key on the...
 # ...application to something unique and secret."
-# above error fixed; new error is:
-# "NameError: name 'UPLOAD_FOLDER' is not defined" 
+## above error fixed; new error is:
+## "NameError: name 'UPLOAD_FOLDER' is not defined" 
+### found true path for UPLOAD_FOLDER and updated it in app_file_upload.py
+### "UPLOAD_FOLDER not defined" error still persists
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
@@ -52,4 +54,6 @@ if __name__ == "__main__":
     app.config['SESSION_TYPE'] = 'filesystem'
     app.debug = True
     # added lines 49 - 51
+    # new error message:
+    # "NameError: name 'UPLOAD_FOLDER' is not defined"  
     app.run()
