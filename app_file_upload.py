@@ -2,7 +2,11 @@
 
 from flask import Flask
 
-UPLOAD_FOLDER = 'static/uploads'
+UPLOAD_FOLDER = '<true_path_info>/static/uploads'
+# true path found using
+# >>>python3
+# >>>import os
+# >>>os.path.abspath("src/examplefile.txt")
 
 app = Flask(__name__)
 app.secret_key = 'secret key'
