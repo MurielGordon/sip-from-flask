@@ -15,6 +15,12 @@ app = Flask(__name__)
 ## "NameError: name 'UPLOAD_FOLDER' is not defined" 
 ### found true path for UPLOAD_FOLDER and updated it in app_file_upload.py
 ### "UPLOAD_FOLDER not defined" error still persists
+#### UPLOAD_FOLDER error fixed -- it needs to be added as a variable to the code block for the upload_image fuction in main.py
+#### I also retooled line 45:
+#### formerly: file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+#### so now it works! hooray!
+#### all these notes aer great but I think it's time to make something that documents this troubleshooting process somewhere else
+
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
@@ -36,7 +42,9 @@ def upload_image():
         return redirect(request.url)
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
-        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        UPLOAD_FOLDER = '<true folder path>'
+        file.save(os.path.join(UPLOAD_FOLDER, filename))
+        #file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename)) <<<< old version of line 45
         #print('upload_image filename: ' + filename)
         flash('Image successfully uploaded and displayed below')
         return render_template('upload.html', filename=filename)
