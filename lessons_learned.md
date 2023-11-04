@@ -1,4 +1,4 @@
-## In Which We Document Every Single Thing We Learned With Very Little Organization
+## In which we document every single thing we learned with very little organization
 1. You can avoid tagalong files from other git working trees if you use the FIRST set of instructions (create new repo on command line) in a new GitHub repo instead of the SECOND set (push existing repo from command line)
 2. Nice markdown documentation for these .md files here: https://tinyurl.com/y3s7kmjk
 Secret key generation: https://tinyurl.com/4ysuy5dk
@@ -9,4 +9,4 @@ Secret key generation: https://tinyurl.com/4ysuy5dk
 7. UPLOAD_FOLDER variable needs to be defined in the unpload_image(): function in main.py for the thing to work: https://tinyurl.com/w92x7dxd
 8. ...and app.config needed to be removed from the file.save line 
 
-## The Error Messages and Their Corresponding Fixes
+## The error messages and their corresponding fixes
