@@ -13,4 +13,4 @@
 
 ## The error messages and their corresponding fixes
 1. "No file type" -- inescapable outcome regardless of type of file added, no file added.
-- Fix: added **app = Flask(__name__)** under the import code block.
+> Fix: added **app = Flask(__name__)** under the import code block.
