@@ -11,6 +11,7 @@
 10. UPLOAD_FOLDER variable as defined in main.py MUST be the true path for the folder. Cannot use relative path. Not sure why.
 11. UPLOAD_FOLDER variable as defined in app_file_upload.py can be either true path or relative path. Not sure why there is more wiggle room here.
 
+
 ## The error messages and their corresponding fixes
 > "No file type" -- inescapable outcome regardless of type of file added, no file added.
 - Fix: added **app = Flask(__name__)** under the import code block.
@@ -31,6 +32,6 @@
 - >os.path.abspath("src/examplefile.txt")
 - Optional: replace relative path with true path for UPLOAD_FOLDER in app_file_upload.py
 - Not optional: add UPLOAD_FOLDER _**with**_ true path as variable to **if file and allowed_file(file.filename):** if statement in _def upload_image():_ function.  
-- Also not optional: file.save line needs a refresh:
+- Also not optional: file.save line in main.py needs a refresh:
 - > old: **file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))**
 - > new: **file.save(os.path.join(UPLOAD_FOLDER, filename))**
