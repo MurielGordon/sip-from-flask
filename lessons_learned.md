@@ -20,7 +20,7 @@
 - >import os
 - >os.urandom(12)
 - Added the following lines to if __name__ == "__main__": condition in main.py:
-- app.secret_key = 'secret key'
-- app.config['SESSION_TYPE'] = 'filesystem'
-- app.debug = True
+- >app.secret_key = 'secret key'
+- >app.config['SESSION_TYPE'] = 'filesystem'
+- >app.debug = True
 - Set secret key variable in main.py and app_file_upload.py
