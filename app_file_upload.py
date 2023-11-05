@@ -7,6 +7,7 @@ UPLOAD_FOLDER = '<true_path_info>/static/uploads'
 # >>>python3
 # >>>import os
 # >>>os.path.abspath("src/examplefile.txt")
+## this UPLOAD_FOLDER can be either the true path or the more vague '/static/uploads'. No idea why
 
 app = Flask(__name__)
 app.secret_key = 'secret key'
