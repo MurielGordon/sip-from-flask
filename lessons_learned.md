@@ -12,5 +12,5 @@
 11. UPLOAD_FOLDER variable as defined in app_file_upload.py can be either true path or relative path. Not sure why there is more wiggle room here.
 
 ## The error messages and their corresponding fixes
-1. "No file type" -- inescapable outcome regardless of type of file added, no file added.
-> Fix: added **app = Flask(__name__)** under the import code block.
+> "No file type" -- inescapable outcome regardless of type of file added, no file added.
+- Fix: added **app = Flask(__name__)** under the import code block.
