@@ -8,5 +8,7 @@ Secret key generation: https://tinyurl.com/4ysuy5dk
 6. "[folder name] not defined" type error messages can be the result of a folder path being different than you think. Suggested way to find the true path of a folder or file: https://tinyurl.com/4wuzy2xw
 7. UPLOAD_FOLDER variable needs to be defined in the unpload_image(): function in main.py for the thing to work: https://tinyurl.com/w92x7dxd
 8. ...and app.config needed to be removed from the file.save line 
+9. UPLOAD_FOLDER variable as defined in main.py MUST be the true path for the folder. Cannot use relative path. Not sure why.
+10. UPLOAD_FOLDER variable as defined in app_file_upload.py can be either true path or relative path. Not sure why there is more wiggle room here.
 
 ## The error messages and their corresponding fixes
