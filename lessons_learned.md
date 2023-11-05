@@ -15,7 +15,7 @@
 > "No file type" -- inescapable outcome regardless of type of file added, no file added.
 - Fix: added **app = Flask(__name__)** under the import code block.
 > "RuntimeError: This session is unavailable because no secret key was set. Set the secret_key on the application to something unique and secret."
-- Generated secret key in terminal using the following commands:
+- Fix: Generated secret key in terminal using the following commands:
 - >python3
 - >import os
 - >os.urandom(12)
@@ -24,3 +24,13 @@
 - >app.config['SESSION_TYPE'] = 'filesystem'
 - >app.debug = True
 - Set secret key variable in main.py and app_file_upload.py
+> "NameError: name 'UPLOAD_FOLDER' is not defined" 
+- Fix: Find true folder path in terminal using the following commands:
+- >python3
+- >import os
+- >os.path.abspath("src/examplefile.txt")
+- Optional: replace relative path with true path for UPLOAD_FOLDER in app_file_upload.py
+- Not optional: add UPLOAD_FOLDER _**with**_ true path as variable to **if file and allowed_file(file.filename):** if statement in _def upload_image():_ function.  
+- Also not optional: file.save line needs a refresh:
+- > old: **file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))**
+- > new: **file.save(os.path.join(UPLOAD_FOLDER, filename))**
