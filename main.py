@@ -43,6 +43,7 @@ def upload_image():
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
         UPLOAD_FOLDER = '<true folder path>'
+        # this version of UPLOAD_FOLDER absolutely must be the specific path, /static/uploads' will not work
         file.save(os.path.join(UPLOAD_FOLDER, filename))
         #file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename)) <<<< old version of line 45
         #print('upload_image filename: ' + filename)
