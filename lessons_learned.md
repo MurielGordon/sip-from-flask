@@ -14,3 +14,13 @@
 ## The error messages and their corresponding fixes
 > "No file type" -- inescapable outcome regardless of type of file added, no file added.
 - Fix: added **app = Flask(__name__)** under the import code block.
+> "RuntimeError: This session is unavailable because no secret key was set. Set the secret_key on the application to something unique and secret."
+- Generated secret key using the following:
+- >>>python3
+- >>>import os
+- >>>os.urandom(12)
+- Added the following lines to if __name__ == "__main__": condition in main.py:
+- app.secret_key = 'secret key'
+- app.config['SESSION_TYPE'] = 'filesystem'
+- app.debug = True
+- Set secret key variable in main.py and app_file_upload.py
